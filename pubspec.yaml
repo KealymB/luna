@@ -19,6 +19,8 @@ dependencies:
   flutter_hooks:
   riverpod_annotation: ^2.3.4
   go_router: ^13.2.0
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.3
 
 dev_dependencies:
   flutter_test:
@@ -26,8 +28,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner:
   custom_lint:
-  riverpod_generator: ^2.3.11
-  riverpod_lint: ^2.3.9
 
 flutter:
   uses-material-design: true

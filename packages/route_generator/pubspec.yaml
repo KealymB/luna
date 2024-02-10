@@ -1,0 +1,10 @@
+name: route_generator
+description: File based route generator
+version: 1.0.0
+environment:
+  sdk: "^3.2.0"
+
+dependencies:
+  build: ^2.4.1
+  build_runner: ^2.4.8
+  source_gen: ^1.5.0

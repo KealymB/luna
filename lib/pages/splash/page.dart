@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:luna/features/auth/cubit.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class SplashPage extends StatelessWidget {
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    context.read<AuthCubit>().checkAuthenticationStatus();
+
     return const Scaffold(
       body: Center(
         child: Column(
@@ -12,19 +16,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             CircularProgressIndicator(),
             SizedBox(height: 16),
-            Icon(
-              Icons.share_location_outlined,
-              size: 48,
-              color: Colors.blue,
-            ),
             SizedBox(height: 16),
-            Text(
-              'Loading',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
           ],
         ),
       ),
