@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:luna/features/auth/cubit.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -23,16 +25,16 @@ class WelcomePage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // TODO: Implement login functionality
+                context.read<AuthCubit>().signInWithGoogle();
               },
-              child: Text('Login'),
+              child: const Text('Sign in with Google'),
             ),
             const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () {
                 // TODO: Implement signup functionality
               },
-              child: const Text('Signup'),
+              child: const Text('Sign up'),
             ),
           ],
         ),
