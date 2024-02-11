@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:luna/features/auth/state.dart';
+import 'package:luna/features/auth/user_model.dart';
+import 'package:luna/features/auth/utils.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
@@ -10,12 +12,15 @@ class AuthCubit extends Cubit<AuthState> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future<void> checkAuthenticationStatus() async {
-    print("checkAuthenticationStatus");
+    print("checking auth status");
+
     try {
       User? currentUser = FirebaseAuth.instance.currentUser;
 
       if (currentUser != null) {
-        emit(Authenticated(currentUser));
+        UserDetails userDetails = await createOrFetchUserDetails(currentUser);
+
+        emit(Authenticated(currentUser, userDetails));
       } else {
         emit(Unauthenticated());
       }
@@ -39,7 +44,9 @@ class AuthCubit extends Cubit<AuthState> {
             await _auth.signInWithCredential(credential);
         final User? user = authResult.user;
         if (user != null) {
-          emit(Authenticated(user));
+          final userDetails = await createOrFetchUserDetails(user);
+
+          emit(Authenticated(user, userDetails));
         }
       }
     } catch (e) {
