@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:luna/features/auth/cubit.dart';
 import 'package:luna/features/auth/state.dart';
+import 'package:luna/features/router/navigation_controller.dart';
 import 'package:luna/features/router/router.dart';
 import 'package:luna/firebase_options.dart';
 
@@ -30,15 +31,7 @@ class Luna extends StatelessWidget {
           ),
           routerConfig: router,
           builder: (context, child) => BlocListener<AuthCubit, AuthState>(
-                listener: (context, state) {
-                  if (state is Unauthenticated) {
-                    router.go("/Welcome");
-                  }
-
-                  if (state is Authenticated) {
-                    router.go("/Home");
-                  }
-                },
+                listener: NavigationController().navigationListener,
                 child: child,
               )),
     );
