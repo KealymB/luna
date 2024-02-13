@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:luna/env/env.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -50,7 +51,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAIqJduJeMNLVL3QIyxwPxFeOIJfQSPJwE',
+    apiKey: Env.FIREBASEAPI_ANDROID,
     appId: '1:916336084919:android:1788c9ce4b74e813e18a32',
     messagingSenderId: '916336084919',
     projectId: 'luna-ee317',
@@ -58,12 +59,13 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDTfbZhRw3HpTqqPL2HrI8uGelKztw88IQ',
+    apiKey: Env.FIREBASEAPI_IOS,
     appId: '1:916336084919:ios:2d5252c985451efae18a32',
     messagingSenderId: '916336084919',
     projectId: 'luna-ee317',
     storageBucket: 'luna-ee317.appspot.com',
-    iosClientId: '916336084919-cp0kje96ugdvhlte901mh6ileeoggfau.apps.googleusercontent.com',
+    iosClientId:
+        '916336084919-cp0kje96ugdvhlte901mh6ileeoggfau.apps.googleusercontent.com',
     iosBundleId: 'com.kealym.luna',
   );
 }
