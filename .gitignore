@@ -11,6 +11,9 @@
 migrate_working_dir/
 *.env
 **/env.g.dart
+ios/Pods
+**/GoogleService-Info.plist
+**/google-services.json
 
 # IntelliJ related
 *.iml
