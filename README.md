@@ -1,16 +1,36 @@
-# luna
+# Luna
 
-A new Flutter project.
+Luna Shuttle Service is a mobile application designed to facilitate shuttle services for companies and their employees.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Drivers can use the app to create routes, share their location, and manage shuttle operations efficiently.
+- Riders can track the shuttle's estimated arrival time, current location, and available space.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To run this project locally, follow these steps:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Run `flutter pub get` to install dependencies.
+4. Add required firebase Google services.plist and .json files
+5. Run the app on your preferred device or emulator using `flutter run`.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/your-feature-name`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature-name`).
+5. Create a new Pull Request.
+
+## License
+
+This project is proprietary software. All rights reserved. Unauthorized copying, distribution, or modification of this software, in whole or in part, is strictly prohibited without the prior written consent of Luna.
+
+---
+
+*Copyright © 2024 Luna*
