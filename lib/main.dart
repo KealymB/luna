@@ -20,20 +20,18 @@ class Luna extends StatelessWidget {
   const Luna({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit(),
-      child: MaterialApp.router(
-          title: 'Luna',
-          theme: ThemeData(
-            colorScheme: const ColorScheme.dark(),
-            useMaterial3: true,
-          ),
-          routerConfig: router,
-          builder: (context, child) => BlocListener<AuthCubit, AuthState>(
-                listener: NavigationController().navigationListener,
-                child: child,
-              )),
-    );
-  }
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => AuthCubit(),
+        child: MaterialApp.router(
+            title: 'Luna',
+            theme: ThemeData(
+              colorScheme: const ColorScheme.dark(),
+              useMaterial3: true,
+            ),
+            routerConfig: router,
+            builder: (context, child) => BlocListener<AuthCubit, AuthState>(
+                  listener: NavigationController().navigationListener,
+                  child: child,
+                )),
+      );
 }

@@ -12,7 +12,7 @@ class AuthCubit extends Cubit<AuthState> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future<void> checkAuthenticationStatus() async {
-    print("checking auth status");
+    emit(AuthLoading());
 
     try {
       User? currentUser = FirebaseAuth.instance.currentUser;
@@ -26,6 +26,7 @@ class AuthCubit extends Cubit<AuthState> {
       }
     } catch (e) {
       print(e);
+      emit(Unauthenticated());
     }
   }
 
