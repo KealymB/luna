@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import 'package:luna/pages/onboarding/slides/slide1.dart';
+import 'package:luna/pages/onboarding/slides/slide2.dart';
+import 'package:luna/pages/onboarding/slides/slide3.dart';
+
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
@@ -24,46 +28,10 @@ class OnboardingPageState extends State<OnboardingPage> {
                   currentPage = page;
                 });
               },
-              children: [
-                // Page 1
-                Container(
-                  color: Colors.blue,
-                  child: const Center(
-                    child: Text(
-                      'Page 1',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                // Page 2
-                Container(
-                  color: Colors.green,
-                  child: const Center(
-                    child: Text(
-                      'Page 2',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                // Page 3
-                Container(
-                  color: Colors.orange,
-                  child: const Center(
-                    child: Text(
-                      'Page 3',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+              children: const [
+                Slide1(),
+                Slide2(),
+                Slide3(),
               ],
             ),
             Align(
@@ -74,8 +42,8 @@ class OnboardingPageState extends State<OnboardingPage> {
                   controller: _pageController,
                   count: _numPages,
                   effect: const WormEffect(
-                    dotColor: Colors.grey,
-                    activeDotColor: Colors.blue,
+                    dotColor: Color.fromRGBO(103, 58, 183, 0.5),
+                    activeDotColor: Color.fromRGBO(103, 58, 183, 1),
                   ),
                 ),
               ),
